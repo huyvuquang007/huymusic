@@ -1,0 +1,59 @@
+.singer-page {
+    position: fixed;
+    /* background-color: red; */
+    background-color: #ffffff;
+    background-image: linear-gradient(
+        196deg,
+        #ffffff 0%,
+        #7e8292 19%,
+        #ff0000 100%
+    );
+
+    width: 55%;
+    min-height: 100vh;
+    left: 20%;
+    padding: 20px;
+}
+
+.singer-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-row {
+    margin-top: 20px;
+}
+
+.img-item img {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.img-item p {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.page-singer-number {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.page-singer-number a {
+    padding: 0 15px;
+}
+
+.page-singer-number-active {
+    background-color: rgba(82, 0, 0, 1);
+}

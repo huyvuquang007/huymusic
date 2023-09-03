@@ -1,0 +1,297 @@
+<div class="body">
+    <!-- Header -->
+    <div class="body-header">
+        <ul class="body-list">
+            <li>
+                <a href="#!">Music</a>
+            </li>
+            <li>
+                <a href="#!">Podcast</a>
+            </li>
+            <li>
+                <a href="#!">Live</a>
+            </li>
+            <li>
+                <a href="#!">Radio</a>
+            </li>
+        </ul>
+        <div class="input-group mb-3" style="width: 30%">
+            <input
+                id="input-singer-name"
+                type="text"
+                class="form-control"
+                placeholder="Tên bài hát"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+            />
+            <div class="input-group-append" onclick="searchSong()">
+                <span class="input-group-text" id="basic-addon2"
+                    ><i class="fa-solid fa-magnifying-glass"></i
+                ></span>
+            </div>
+        </div>
+    </div>
+    <!-- Thumnail Image -->
+    <div class="body-thum">
+        <img
+            src="https://vcdn-giaitri.vnecdn.net/2023/07/27/blackpink-1-jpeg-2726-1690451337.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=Qub7Mp1nuaUyK9hRsjIFlA"
+            alt=""
+        />
+    </div>
+    <!-- ListSong -->
+    <div class="body-popular">
+        <div class="popular-header">
+            <h3 style="color: white">Popular</h3>
+            <!-- <button class="popular-btn" onclick="openAddSongModal()">
+                Thêm Mới Bài Hát
+            </button> -->
+        </div>
+        <table class="body-table" id="body-table">
+            <tr>
+                <th>TITLE</th>
+                <th>Tác Giả</th>
+                <th>Ca Sĩ</th>
+            </tr>
+            <!-- <tr>
+                <td>1</td>
+                <td>Yêu người có ước mơ</td>
+                <td>1.000.000</td>
+                <td>Bùi Trường Linh</td>
+            </tr> -->
+            <!-- <tr>
+                <td>2</td>
+                <td>Gặp nhau rồi thật khó lìa xa</td>
+                <td>2.000.000</td>
+                <td>Tây du kí</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Yêu người có ước mơ</td>
+                <td>1.000.000</td>
+                <td>Bùi Trường Linh</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Gặp nhau rồi thật khó lìa xa</td>
+                <td>2.000.000</td>
+                <td>Tây du kí</td>
+            </tr> -->
+        </table>
+        <div class="page-number" id="page-number">
+            <!-- <a  href="#!" >1</a>
+            <a href="#!">2</a>
+            <a href="#!">3</a> -->
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+
+<div
+    class="modal fade"
+    id="modalSong"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="accountModalTitle">Modal title</h5>
+                <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="songnameInput"><b>Tên Bài Hát</b></label>
+                    <input type="hidden" id="SongIdUpdate" name="id" />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter SongName"
+                        id="songnameInput"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="authorInput"><b>Tác Giả</b></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter author"
+                        id="authorInput"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="singerInput"><b>Ca Sỹ</b></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Singer"
+                        id="singerInput"
+                        required
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="pathInput"><b>Path</b></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Path"
+                        id="pathInput"
+                        required
+                    />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                >
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary" onclick="save()">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Alert -success -->
+<div
+    class="alert alert-success alert-dismissible fade modal-success"
+    id="modal-success"
+    role="alert"
+>
+    <strong id="text-alert">Holy guacamole!</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<!-- Modal Delete -->
+<div
+    class="modal fade"
+    id="deleteSongModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalDeleteTitle">Thông Báo</h5>
+                <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="songIdDelete" name="id" />
+                Bạn Có Muốn Xóa Dữ Liệu ?
+            </div>
+            <div class="modal-footer">
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                >
+                    Close
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="onDeleteSong()"
+                >
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal singer -->
+
+<div
+    class="modal fade"
+    id="modalSinger"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="accountModalTitle">
+                    Thêm Mới Ca Sĩ
+                </h5>
+                <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="input-singername"><b>Tên Ca Sĩ</b></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter SingerName"
+                        id="input-singername"
+                        required
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="input-singername"><b>Hình Ảnh</b></label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Image"
+                        id="input-image"
+                        required
+                    />
+                </div>
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                    >
+                        Close
+                    </button>
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick="saveSinger()"
+                    >
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assess/js/body.js"></script>
+</div>

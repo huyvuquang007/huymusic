@@ -1,0 +1,94 @@
+.body {
+    position: fixed;
+    left: 20%;
+    right: 25%;
+    background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(15, 15, 15, 0.6) 0%
+        ),
+        linear-gradient(180deg, #4c0000 0%, #0a0a0a 100%);
+    width: 55%;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.body-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.body-list {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.body-thum img {
+    width: 61%;
+    height: 206px;
+    margin: auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
+
+.body-table th,
+.body-table td {
+    color: white;
+    text-align: left;
+    padding: 10px 20px;
+}
+
+.body-table .song-name-title:hover {
+    cursor: pointer;
+}
+
+.body-table tr:hover {
+    background-color: rgba(82, 0, 0, 1);
+}
+
+.body-table i {
+    cursor: pointer;
+}
+
+.page-number {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.page-number a {
+    padding: 0 15px;
+}
+
+.page-number-active {
+    background-color: rgba(82, 0, 0, 1);
+}
+
+.popular-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popular-header .popular-btn {
+    outline: none;
+    border: 1px solid #4c0000;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/* .page-number a:hover {
+    background-color: rgba(82, 0, 0, 1);
+    text-decoration: none;
+    color: white;
+} */
+
+.modal-success {
+    position: fixed;
+    top: 10px;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- font poppins -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <!-- font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- reset css -->
+        <link rel="stylesheet" href="./assess/css/reset.css" />
+
+        <!-- Bootstrap -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+        />
+
+        <!-- Jquery  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!-- link css -->
+        <link rel="stylesheet" href="./assess/css/style.css" />
+        <link rel="stylesheet" href="./assess/css/menu.css" />
+        <link rel="stylesheet" href="./assess/css/menu-right.css" />
+        <link rel="stylesheet" href="./assess/css/body.css" />
+        <link rel="stylesheet" href="./assess/css/favourite.css" />
+        <link rel="stylesheet" href="./assess/css/singer.css" />
+        <link rel="stylesheet" href="./assess/css/songofsinger.css" />
+        <title>Huy Music</title>
+    </head>
+    <body>
+        <!-- Menu -->
+        <div id="menu">
+            <div id="navbar">
+                <div class="logo">
+                    <i class="fa-solid fa-music"></i>
+                    <span>HuyMusic</span>
+                </div>
+                <!-- nav 1 -->
+                <ul class="sub-navbar">
+                    <span>Menu</span>
+                    <li>
+                        <i class="fa-solid fa-house"></i>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <a href="">Trends</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-music"></i>
+                        <a href="">Library</a>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-cc-discover"></i>
+                        <a href="">Discover</a>
+                    </li>
+                </ul>
+
+                <!-- nav 2 -->
+                <ul class="sub-navbar">
+                    <span>Discover</span>
+                    <li onclick="showPlaylist()">
+                        <i class="fa-solid fa-list"></i>
+                        <a href="">Playlists</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-heart"></i>
+                        <a href="#!" onclick="openFavourite()">Favourite</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-icons"></i>
+                        <a href="">Daily Mix</a>
+                    </li>
+                </ul>
+
+                <!-- nav 3 -->
+                <ul class="sub-navbar">
+                    <span>General</span>
+                    <li>
+                        <i class="fa-solid fa-gear"></i>
+                        <a href="">Settings</a>
+                    </li>
+                    <li id="btn-check-login">
+                        <!-- <i class="fa-solid fa-right-to-bracket"></i>
+                        <a href="/assess/html/login.html">Log In</a> -->
+                        <!-- <div class="user-login" onclick="showBtnLogout()">
+                            <img
+                                src="https://media.istockphoto.com/id/1410847427/vi/anh/%C4%91%C3%A0n-%C3%B4ng-%C4%91ang-nghe-nh%E1%BA%A1c-b%E1%BA%B1ng-tai-nghe-m%E1%BB%99t-c%C3%A1ch-tho%E1%BA%A3i-m%C3%A1i-v%C3%A0-vui-v%E1%BA%BB-3d-render.webp?b=1&s=170667a&w=0&k=20&c=6JJIrPYBHIXJoYzQZ6bWvoCImSdU8irtJS3CcXb3uak="
+                                alt=""
+                            />
+                            <span>Huy111</span>
+                            <div id="user-login--logout" onclick="logOut()">Log Out</div>
+                        </div> -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Body -->
+        <div id="body"></div>
+        <!-- Menu Right -->
+        <div id="menu-right">
+            <div id="navbar-right">
+                <div class="header-navbar-right">
+                    <h2>Singer</h2>
+                    <p onclick="showAllSinger()">Xem tất cả</p>
+                </div>
+
+                <div class="row-img row" id="singer-list">
+                    <div class="sub-row col-4 pl-2">
+                        <img
+                            src="https://images2.thanhnien.vn/Uploaded/hienth/2023_01_04/321349454-509713811134995-3337364225961986760-n-725.jpeg"
+                            alt=""
+                        />
+                        <p>Ưng Hoàng Phúc</p>
+                    </div>
+
+                    <div class="sub-row col-4 pl-2">
+                        <img
+                            src="https://cdn-i.vtcnews.vn/resize/Da9xKKWytSr4nFIRCPjyxBQ21LK9PQ2a0/upload/2023/06/30/blackpink-07424148.jpg"
+                            alt=""
+                        />
+                        <p>Black Pink</p>
+                    </div>
+
+                    <div class="sub-row col-4 pl-2">
+                        <img
+                            src="https://cdn.24h.com.vn/upload/3-2021/images/2021-07-06/Xon-xao-Son-Tung-M-TP-va-loat-youtuber-dinh-dam-bi-cuom-mat-thuong-hieu-photo-1-16094117624341764656274-1625582209-452-width620height827.jpg"
+                            alt=""
+                        />
+                        <p>Sơn Tùng MTP</p>
+                    </div>
+
+                    <div class="sub-row col-4 pl-2">
+                        <img
+                            src="https://nguoinoitieng.tv/images/nnt/105/0/biqg.jpg"
+                            alt=""
+                        />
+                        <p>Bùi Trường Linh</p>
+                    </div>
+                    <div class="sub-row col-4 pl-2">
+                        <img
+                            src="https://media.vov.vn/sites/default/files/styles/large/public/2022-05/279208497_2093759374115956_5337707617615539973_n.jpg"
+                            alt=""
+                        />
+                        <p>Đông nhi</p>
+                    </div>
+                </div>
+
+                <!-- row img 2 -->
+
+                <!-- <div class="row-img">
+                    <div class="sub-row">
+                        <img
+                            src="https://nguoinoitieng.tv/images/nnt/105/0/biqg.jpg"
+                            alt=""
+                        />
+                        <p>Bùi Trường Linh</p>
+                    </div>
+                    <div class="sub-row">
+                        <img
+                            src="https://media.vov.vn/sites/default/files/styles/large/public/2022-05/279208497_2093759374115956_5337707617615539973_n.jpg"
+                            alt=""
+                        />
+                        <p>Đông nhi</p>
+                    </div>
+
+                    <div class="sub-row">
+                        <img
+                            src="https://nld.mediacdn.vn/2020/9/23/hoo1403-1600769609391337398991-1600824814143647303103-crop-16008249755862069103195.jpg"
+                            alt=""
+                        />
+                        <p>Jack</p>
+                    </div>
+                </div> -->
+
+                <div class="card-playing">
+                    <h3 class="card-title">Now Playing</h3>
+                    <img
+                        class="playing-img"
+                        src="https://thumbs.gfycat.com/CelebratedWeirdGlowworm-max-1mb.gif"
+                        alt=""
+                    />
+                    <p class="song-name" id="song-name">
+                        Yêu Một Người Có Ước Mơ
+                    </p>
+                    <p class="singer" id="singer">Bùi Trường Linh</p>
+
+                    <input
+                        id="progress"
+                        class="progress"
+                        type="range"
+                        value="0"
+                        step="1"
+                        min="0"
+                        max="100"
+                    />
+                    <!-- Control -->
+                    <div class="control">
+                        <div class="btn btn-repeat">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <div class="btn btn-prev">
+                            <i class="fas fa-step-backward"></i>
+                        </div>
+                        <div class="btn btn-toggle-play" onclick="playSong()">
+                            <i class="fas fa-pause icon-pause"></i>
+                            <i class="fas fa-play icon-play"></i>
+                        </div>
+                        <div class="btn btn-next">
+                            <i class="fas fa-step-forward"></i>
+                        </div>
+                        <div class="btn btn-random">
+                            <i class="fas fa-random"></i>
+                        </div>
+                    </div>
+
+                    <div></div>
+                    <audio
+                        id="audio"
+                        src="https://vnno-pt-3-tf-mp3-s1-zmp3.zmdcdn.me/24074f521712fe4ca703/6479051177131780950?authen=exp=1690648938~acl=/24074f521712fe4ca703/*~hmac=39f0fc6aef3c64507eb0827b8f4ce24a&fs=MTY5MDQ3NjEzODI3Mnx3ZWJWNnwwfDE0LjE5MS4xNjAdUngMzE"
+                    ></audio>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./assess/js/main.js"></script>
+    <script src="./assess/js/menu-right.js"></script>
+    <script src="./assess/js/menu.js"></script>
+    <!-- <script src="./assess/js/favourite.js"></script> -->
+</html>

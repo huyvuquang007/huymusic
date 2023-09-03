@@ -1,0 +1,70 @@
+a {
+    color: white;
+}
+
+#navbar {
+    background-color: #0e0e0e;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    padding: 30px;
+}
+
+.logo i {
+    font-size: 40px;
+    color: #ff5656;
+}
+
+.logo span {
+    font-size: 28px;
+    color: #ff5656;
+    margin-left: 10px;
+}
+
+.sub-navbar span {
+    color: white;
+}
+
+.sub-navbar i {
+    padding: 10px 7px 7px 0;
+    color: #ff5656;
+}
+
+.sub-navbar {
+    margin-top: 20px;
+}
+
+.user-login {
+    margin-top: 30px;
+    cursor: pointer;
+    width: 130px;
+}
+
+.user-login img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+.user-login span {
+    padding-left: 10px;
+}
+
+.user-login div {
+    padding: 10px;
+    background-color: white;
+    border-radius: 3px;
+    color: #ff5656;
+    font-weight: 600;
+    position: absolute;
+    right: 0px;
+    bottom: 66px;
+    display: none;
+}
+
+.hide {
+    display: none;
+}
